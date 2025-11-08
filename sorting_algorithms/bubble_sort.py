@@ -1,12 +1,13 @@
-def bubble_sort(lst):
-    """Bubble sort. Takes list and sorts it."""
-    size = len(lst)
+def bubble_sort(lst: list) -> list:
+    """Bubble sort. Takes list. Returns sorted list."""
+    sorted_lst = lst.copy()
     is_sorted = False
+
     while not is_sorted:
         is_sorted = True
-        for i in range(size - 1):
-            if lst[i] > lst[i + 1]:
-                temp = lst[i]
-                lst[i] = lst[i + 1]
-                lst[i + 1] = temp
+        for i in range(len(sorted_lst) - 1):
+            if sorted_lst[i] > sorted_lst[i + 1]:
+                sorted_lst[i], sorted_lst[i + 1] = sorted_lst[i + 1], sorted_lst[i]
                 is_sorted = False
+
+    return sorted_lst
